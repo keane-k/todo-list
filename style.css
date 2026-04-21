@@ -1,0 +1,147 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, sans-serif;
+    box-sizing:border-box;
+}
+
+/* body {
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-image: url("traveler-bg.png");
+    font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, sans-serif;
+} */
+
+.container{
+    width:100%;
+    min-height:100vh;
+    background-image: url("traveler-bg.png");
+    /* Scale image to cover the entire container */
+    background-size: cover; 
+    /* Keep center of image */
+    background-position: center;
+    /* Prevent image from repeating (tiling) */
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+/* To-Do List */
+.todo-app{
+    width:100%;
+    max-width: 540px;
+    background: #fff;
+    /* margin: top right(since left isn't specified, defaulted to be same as right) bottom */
+    margin: 100px auto 20px;
+    /* using this order: top -> right -> bottom -> left */
+    padding: 40px 30px 70px;
+    /* Add border radius for round corners */
+    border-radius: 10px;
+
+}
+
+/* Adjusting To-Do List text <h2> */
+.todo-app h2{
+    color:#002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Adjusting To-Do List img */
+.todo-app h2 img{
+    width: 50px;
+    /* Add a gap between h2 text and img */
+    margin-left:5px;
+}
+
+/* Creating and decorating a border containing Search Bar and Button */
+.row{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #bed7de;
+    /* background: #5e87a8; */
+    /* Add border radius for round corners */
+    border-radius: 30px;
+    /* Push Search box to the right */
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+/* Decorating Search Bar (input field) */
+input{
+    /* Extend Search Bar to the full width of the border */
+    flex:1;
+    /* Remove border and outline of Search Bar */
+    border: none;
+    outline:none;
+    /* Have background be transparent, else default is White */
+    background: transparent;
+    /* Give some aesthetic space around Search Box */
+    padding: 10px;
+}
+
+/* Decorating Add Button */
+button{
+    /* Remove border and outline of Button */
+    border: none;
+    outline:none;
+    padding: 16px 50px;
+    background: #5e87a8;
+    /* Button text color */
+    color:#fdfcfa;
+    /* color: #e5dbbf; */
+    /* Increase font size of 'Add' button */
+    font-size: 16px;
+    /* Change cursor icon to pointer when hovering on 'Add' button */
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+/* Decorating ul (unordered list) and li (list items) */
+ul li{
+    /* Adjust bulletpoint style, we'll use none for this */
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    /* To prevent users from highlighting text in list items, amend user-select to be none  */
+    user-select:none;
+    /* Change cursor to pointer when hovering on list items */
+    cursor: pointer;
+    position: relative;
+}
+
+/* Adding Unchecked Mark before (-to the left of) every list items */
+ul li::before{
+    content: "";
+    /* `position: absolute;` allows us to freely position the icon anywhere   
+        relative to the nearest parent with `position: relative;` */
+    position: absolute;
+    /* Define size of the unchecked box|icon */
+    height: 28px;
+    width: 28px;
+    /* If using circle instead, set border radius to 50% to get a circle */
+    border-radius: 20%;
+    /* background-color: aquamarine; */
+    background-image: url(unchecked-checkbox-78.png);
+    background-size: cover;
+    background-position: center;
+    /* Position Unchecked Mark to the left of list items */
+    top: 12px;
+    left: 8px;
+}
+
+/* When a list item is checked, grey-out and strike the words */
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+/* When a list item is checked, change Unchecked Mark to Checked Mark */
+ul li.checked::before{
+    background-image: url(checked-checkbox-78.png);
+}
