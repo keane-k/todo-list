@@ -42,7 +42,7 @@
 
 }
 
-/* Adjusting To-Do List text <h2> */
+/* Adjusting 'To-Do List' text <h2> */
 .todo-app h2{
     color:#002765;
     display: flex;
@@ -130,7 +130,7 @@ ul li::before{
     background-size: cover;
     background-position: center;
     /* Position Unchecked Mark to the left of list items */
-    top: 12px;
+    top: 10px;
     left: 8px;
 }
 
@@ -138,10 +138,33 @@ ul li::before{
 ul li.checked{
     color: #555;
     text-decoration: line-through;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 3px;
 }
 
 /* When a list item is checked, change Unchecked Mark to Checked Mark */
 ul li.checked::before{
     background-image: url(checked-checkbox-78.png);
 }
+
+/* Adjusting the Cross icon next to each list item for user to manually remove list item */
+ul li span{
+    position:absolute;
+    right:0;            /* No gaps from the right most border, this pushes the Cross icon to the far right */
+    top: 0px;           /* 5px gap from top, this pushes the Cross icon down */
+    /* Create a Circle Border around the Cross Icon */
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    font-size:22px;
+    color:#555;
+    line-height: 35px;
+    text-align: center;
+    align-items: center;
+}
+
+/* Add hover effect on Cross icon, it'll show the Circle border when cursor is on Cross icon */
+ul li span:hover{
+    background: #edeef0;
+}
+
+
