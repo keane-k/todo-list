@@ -58,3 +58,10 @@ function showData(){
 }
 showData();
 
+
+// Using 'Enter' key to 'Add' task to list
+input_box.addEventListener("keydown", function(e){      // use 'keydown' instead of 'keypress' (deprecated)
+    if(e.key === "Enter"){
+        addTask();
+    }
+});
