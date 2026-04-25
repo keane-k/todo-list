@@ -14,11 +14,12 @@ function addTask(){
                                                     // using .innerHTML
         list_container.appendChild(li);             // add <li> to the ToDo list
 
+
         // Add a Cross using <span> next to each <li> items for user to remove items manually
         let span = document.createElement("span");  // create HTML element with <span> tag
         span.innerHTML = "\u00d7";                  // add Cross icon into <span> tag
         li.appendChild(span);                       // add <span> into <li>
-                                                    // Use CSS to 'decorate' and position the Cross icon as per your preference
+                                                    // Use CSS to 'decorate' and position the Cross icon as per your preference                                              
     }
 
     // Clear the textbox, QOL improvement

@@ -133,13 +133,39 @@ ul li::before{
     top: 10px;
     left: 8px;
 }
-
+/* ---------------------------------------------------------------------- */
+/* 1. Default strike-through, no animation */
 /* When a list item is checked, grey-out and strike the words */
-ul li.checked{
+/* ul li.checked{
     color: #555;
     text-decoration: line-through;
     text-decoration-thickness: 3px;
+} */
+
+/* 2. Animated strike-through */
+/* When a task item is checked, grey-out and strike the words */
+ul li.checked{
+    color: #555;
 }
+
+ul li::after{
+    content:"";
+    position:absolute;
+    left:10%;
+    top:50%;
+    width:0%;           
+    height:3px;                     /* Thickness of strike-through */
+    background-color:#555;
+    transform: translateY(-50%);
+    transition: width 0.3s ease;
+    
+}
+
+/* Animate when checked */
+ul li.checked::after{
+    width: 80%;
+}
+/* ---------------------------------------------------------------------- */
 
 /* When a list item is checked, change Unchecked Mark to Checked Mark */
 ul li.checked::before{
@@ -150,7 +176,7 @@ ul li.checked::before{
 ul li span{
     position:absolute;
     right:0;            /* No gaps from the right most border, this pushes the Cross icon to the far right */
-    top: 0px;           /* 5px gap from top, this pushes the Cross icon down */
+    top: 3px;           /* 3px gap from top, this pushes the Cross icon down */
     /* Create a Circle Border around the Cross Icon */
     width: 40px;
     height:40px;
